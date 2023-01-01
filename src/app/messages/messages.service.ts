@@ -16,7 +16,7 @@ export interface MessageEvent {
     providedIn: 'root',
 })
 export class MessagesService {
-    private user = 'andre';
+    public user = 'andre';
     public readonly $messages = new BehaviorSubject<Message[]>([]);
 
     constructor(private socket: ChatSocket) {

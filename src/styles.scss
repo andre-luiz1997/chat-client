@@ -1,11 +1,20 @@
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'page';
 
-body {
-    position: relative;
-    overflow-x: hidden;
-}
 body {
   display: grid;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.form-control {
+  &.error:not(.ng-pristine) {
+    border-color: rgb(255, 100, 100)!important;
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgb(255, 100, 100, .25)!important;
+    }
+  }
 }

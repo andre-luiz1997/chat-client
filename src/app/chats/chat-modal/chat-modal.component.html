@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Add chat</h2>
+<mat-dialog-content class="mat-typography">
+    <form *ngIf="formChat" [formGroup]="formChat">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input
+                        type="text"
+                        formControlName="name"
+                        [ngClass]="{
+                            error: this.formChat.get('name')?.errors ?? false
+                        }"
+                        class="form-control"
+                    />
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<div mat-dialog-actions class="justify-content-space-between">
+    <button class="btn btn-default" mat-button [mat-dialog-close]="false">
+        Close
+    </button>
+    <button class="btn btn-primary" mat-button (click)="createChat()">
+        Confirm
+    </button>
+</div>

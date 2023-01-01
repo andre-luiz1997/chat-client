@@ -1,0 +1,12 @@
+<div class="flex flex-column align-items-center justify-content-center gap-3">
+    <div class="w-100" *ngFor="let chat of chats">
+        <div class="chat" *ngIf="chat?.name">
+            {{ chat.name }}
+            <mat-icon fontIcon="arrow_forward"></mat-icon>
+        </div>
+    </div>
+    <div *ngIf="chats.length == 0">
+        <span class="mb-3">There isn't any open chat now</span>
+    </div>
+    <button class="btn btn-primary" (click)="createChat()">New chat</button>
+</div>
