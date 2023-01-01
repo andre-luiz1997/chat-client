@@ -1,0 +1,9 @@
+<div class="messages">
+    <div class="message" *ngFor="let message of messages">
+        <div class="col-sm-12" *ngIf="message?.text">
+            {{ message.text }}
+        </div>
+    </div>
+</div>
+
+<send-message-input (onMessage)="onMessage($event)"></send-message-input>
